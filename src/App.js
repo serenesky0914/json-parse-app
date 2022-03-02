@@ -5,25 +5,6 @@ import JSONEditorOutput from './JSONEditorOutput';
 
 import './App.css';
 
-// const schema = {
-//   title: 'Example Schema',
-//   type: 'object',
-//   properties: {
-//     array: {
-//       type: 'array',
-//       items: {
-//         type: 'number'
-//       }
-//     },
-//     boolean: {
-//       type: 'boolean'
-//     },
-//     number: {
-//       type: 'number'
-//     }
-//   },
-//   required: ['array', 'string', 'boolean']
-// };
 
 const json = {
   'array': [1, 2, 3],
@@ -34,11 +15,11 @@ const json = {
   'string': 'Hello World'
 };
 
+var errorLen = 0;
+
 class App extends Component {
   state = {
-    // schema,
     text: JSON.stringify(json, null, 2),
-    mode: 'tree'
   };
 
   render() {
@@ -52,6 +33,12 @@ class App extends Component {
                 text={this.state.text}
                 mode={'code'}
                 indentation={4}
+                onValidationError={
+                  function (errors) {
+                    console.error('onValidationError :',  errors.length);
+                    errorLen = errors.length;
+                  }
+                }
                 onChangeText={this.onChangeText}
             />
           </div>
@@ -65,7 +52,6 @@ class App extends Component {
                 text={this.state.text}
                 mode={'view'}
                 indentation={4}
-                onChangeText={this.onChangeText}
             />
           </div>
         </div>
@@ -79,8 +65,13 @@ class App extends Component {
 
   updateJsonParseData = () => {
     var update_data = this.state.text;
-    console.log(update_data);
-    this.setState({ json: update_data });
+    if (errorLen == 0) {
+      console.log(errorLen);
+      if (!isNaN(update_data)) {
+        this.setState({ text: JSON.stringify({}, null, 2)});
+      }
+      this.setState({ json: update_data });
+    }
   }
 }
 

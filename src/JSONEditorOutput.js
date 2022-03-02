@@ -19,9 +19,12 @@ export default class JSONEditorOutput extends Component {
     if ('text' in this.props) {
       this.jsoneditor.setText(this.props.text);
     }
+    
   }
 
   componentDidUpdate() {
+
+
     if ('json' in this.props) {
       this.jsoneditor.update(this.props.json);
     }
