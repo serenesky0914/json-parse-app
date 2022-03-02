@@ -30,6 +30,8 @@ html{
   overflow: auto;
   width: 46%;
   min-width: 320px;
+  margin: 10px;
+  min-width: 400px;
 }
 
 .app .contents .tree {
@@ -37,6 +39,8 @@ html{
   overflow: auto;
   width: 46%;
   min-width: 320px;
+  margin: 10px;
+  min-width: 400px;
 }
 
 .app .contents .menu{
