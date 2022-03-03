@@ -5,8 +5,7 @@ import JSONEditorOutput from './JSONEditorOutput';
 
 import './App.css';
 
-
-const json = {
+const sampleJsonData = {
   'array': [1, 2, 3],
   'boolean': true,
   'null': null,
@@ -19,7 +18,7 @@ var errorLen = 0;
 
 class App extends Component {
   state = {
-    text: JSON.stringify(json, null, 2),
+    text: JSON.stringify(sampleJsonData, null, 2),
   };
 
   render() {
@@ -30,28 +29,28 @@ class App extends Component {
         <div className="contents">
           <div className="code">
             <JSONEditorInput
-                text={this.state.text}
-                mode={'code'}
-                indentation={4}
-                onValidationError={
-                  function (errors) {
-                    console.error('onValidationError :',  errors.length);
-                    errorLen = errors.length;
-                  }
+              text={this.state.text}
+              mode={'code'}
+              indentation={4}
+              onValidationError={
+                function (errors) {
+                  console.error('onValidationError :',  errors.length);
+                  errorLen = errors.length;
                 }
-                onChangeText={this.onChangeText}
+              }
+              onChangeText={this.onChangeText}
             />
           </div>
           <div className="menu">
             <div className='btnUpdate' onClick={this.updateJsonParseData}>
-              <button><img src='/assets/img/3.png' /></button>
+              <button><img src='/assets/img/btn_parse.png' /></button>
             </div>
           </div>
           <div className="tree">
             <JSONEditorOutput
-                text={this.state.text}
-                mode={'view'}
-                indentation={4}
+              text={this.state.text}
+              mode={'view'}
+              indentation={4}
             />
           </div>
         </div>

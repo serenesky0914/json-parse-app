@@ -1,13 +1,41 @@
 {
   "name": "json-parse-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
   "private": true,
   "dependencies": {
-    "jsoneditor": "latest",
-    "lodash": "4.17.21",
+    "@babel/plugin-transform-react-jsx-self": "7.16.7",
+    "@babel/plugin-transform-react-jsx-source": "7.16.7",
+    "@types/parse-json": "4.0.0",
+    "ajv-errors": "1.0.1",
+    "async-each": "1.0.3",
+    "bindings": "1.5.0",
+    "bluebird": "3.7.2",
+    "dot-prop": "5.3.0",
+    "has-ansi": "2.0.0",
+    "is-core-module": "2.8.1",
+    "json-parse-even-better-errors": "2.3.1",
+    "jsoneditor": "9.7.2",
+    "levenary": "1.1.1",
+    "lines-and-columns": "1.2.4",
+    "mississippi": "3.0.0",
+    "nan": "2.15.0",
+    "parent-module": "1.0.1",
+    "path-dirname": "1.0.2",
+    "pinkie-promise": "2.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "remove-trailing-separator": "1.1.0",
+    "saxes": "3.1.11",
+    "supports-preserve-symlinks-flag": "1.0.0",
+    "typescript": "3.9.10",
+    "upath": "1.2.0",
+    "w3c-xmlserializer": "1.1.2",
+    "worker-farm": "1.7.0",
+    "yaml": "1.10.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,4 +60,3 @@
     "npm": "7.15.1"
   }
 }
-
