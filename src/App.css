@@ -29,6 +29,7 @@
   min-width: 320px;
   margin: 10px;
   min-width: 400px;
+  flex: 2 2 30%;
 }
 
 .app .contents .tree {
@@ -38,6 +39,7 @@
   min-width: 320px;
   margin: 10px;
   min-width: 400px;
+  flex: 2 2 30%;
 }
 
 .app .contents .menu{
